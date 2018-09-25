@@ -13,8 +13,24 @@ public class VideogameDao {
     @Autowired
     IVideogameRepository iVideogameRepository;
 
+    //Retrieves all the videogames from the DB
     public List<Videogame> getAllVideogames(){
         return iVideogameRepository.findAll();
     }
 
+    //Inserts a videogame to the DB
+    public boolean insertVideogame(Videogame videogame) {
+
+        if(iVideogameRepository.save(videogame)!=null)
+         return true ;
+
+        return false;
+    }
+
+    public Videogame putVideogame(Videogame videogame) {
+        if(iVideogameRepository.findById(videogame.getIdVideogame()).isPresent())
+        return iVideogameRepository.save(videogame);
+
+        return null;
+    }
 }
