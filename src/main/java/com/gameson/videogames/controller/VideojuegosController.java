@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class VideojuegosControl {
+public class VideojuegosController {
 
     @Autowired
     VideogameDao videogameDao;

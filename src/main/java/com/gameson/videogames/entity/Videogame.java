@@ -11,8 +11,13 @@ public class Videogame {
         private int idVideogame;
 
         private String video_name;
+
         private String platform;
+
         private String category;
+
+        @ManyToOne
+        private Empresa empresa;
 
     public Videogame() {
     }
@@ -54,6 +59,14 @@ public class Videogame {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 
     @Override
