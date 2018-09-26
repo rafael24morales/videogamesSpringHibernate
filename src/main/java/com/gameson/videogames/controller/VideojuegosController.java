@@ -4,6 +4,7 @@ package com.gameson.videogames.controller;
 import com.gameson.videogames.entity.Videogame;
 import com.gameson.videogames.services.VideogameDao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class VideojuegosController {
         return videogameDao.getAllVideogames();
     }
 
-    @PostMapping("/videogames")
+    @PostMapping(value="/videogames")
     public boolean setVideogame(@RequestBody Videogame videogame ){
        return videogameDao.insertVideogame(videogame);
     }
