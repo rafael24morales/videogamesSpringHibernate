@@ -26,7 +26,7 @@ public class EmpresaVideogamesController {
             @RequestBody Videogame videogame,
             @PathVariable int id_emp
     ){
-        videogame.setEmpresa(new Empresa(id_emp,""));
+        videogame.setEmpresa(new Empresa(id_emp,"",""));
         empresaVideogameDao.saveVideogameWithEmpresa(videogame);
     }
 

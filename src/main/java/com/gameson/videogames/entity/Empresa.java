@@ -7,14 +7,17 @@ import javax.persistence.*;
 public class Empresa {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int idEmpresa;
+    private int idEmpresa;
 
     @Column(name="noombre")
-    String nombre;
+    private String nombre;
 
-    public Empresa(int idEmpresa, String nombre) {
+    private String descripcion;
+
+    public Empresa(int idEmpresa, String nombre, String descripcion) {
         this.idEmpresa = idEmpresa;
         this.nombre = nombre;
+        this.descripcion = descripcion;
     }
 
     public Empresa() {
@@ -34,5 +37,13 @@ public class Empresa {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
